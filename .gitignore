@@ -1,0 +1,52 @@
+# Unity-generated caches and local editor state
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+/[Bb]uild/
+/[Bb]uilds/
+/[Mm]emoryCaptures/
+/[Rr]ecordings/
+
+# Generated IDE projects; keep native plugins under Assets versioned.
+/.vs/
+/.idea/
+/*.csproj
+/*.sln
+/*.slnx
+/*.suo
+/*.user
+/*.userprefs
+/*.pidb
+/*.booproj
+/*.svd
+/*.opendb
+/*.VC.db
+/*.pdb
+/*.mdb
+
+# Crash reports and generated packages
+/sysinfo.txt
+/mono_crash.*
+/*.stackdump
+/*.unitypackage
+
+# Generated Unity integrations
+/Assets/AssetStoreTools*
+/Assets/Plugins/Editor/JetBrains*
+/Assets/AddressableAssetsData/*/*.bin*
+/Assets/StreamingAssets/aa*
+
+# OS and local automation files
+.DS_Store
+Thumbs.db
+Desktop.ini
+*~
+__pycache__/
+*.py[cod]
+/.agents/
+/.codex/
+.env
+.env.*
+!.env.example
