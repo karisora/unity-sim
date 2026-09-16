@@ -9,21 +9,18 @@ Hub; it is not a Unity Package Manager (UPM) package.
 ## Requirements
 
 - Unity **2022.3.62f3** (see `ProjectSettings/ProjectVersion.txt`).
-- Git and Git LFS for the large terrain files.
+- Git. The current branch contents do not require Git LFS.
 - Linux x86_64 and **ROS 2 Jazzy** for the bundled ROS2ForUnity native plugins.
   Native plugins for other platforms are not included.
 
 ## Get the project
 
 ```bash
-git lfs install
 git clone --branch ERC2026 git@github.com:karisora/unity-sim.git
 cd unity-sim
-git lfs pull
 ```
 
-Use a GitHub account with access to the repository. Downloading a ZIP is not the
-documented setup path, because the terrain files are stored in Git LFS.
+Use a GitHub account with access to the repository for SSH cloning.
 
 ## Open in Unity
 
@@ -54,8 +51,23 @@ scenes in Build Settings before making a standalone player build.
 
 - `Assets/` and its `.meta` files preserve Unity assets, scripts, plugins, and GUIDs.
 - `Packages/` and `ProjectSettings/` preserve package dependencies and project settings.
-- `SourceAssets/` and `Tools/` preserve terrain source data and preparation scripts.
-- Large OBJ terrain models and the TIFF orthophoto are stored in Git LFS.
+- `Tools/` preserves terrain and texture preparation scripts.
+- The TIFF orthophoto is stored directly in Git.
+
+## Removed terrain models
+
+The following files larger than 100 MB were removed:
+
+- `Assets/Map/Model3D_mesh2.obj` (and its Unity `.meta` file).
+- `SourceAssets/Map/Model3D_mesh2_untextured.obj`.
+
+`Assets/Simulation/Scenes/ERC2025.unity` still references the removed terrain
+model and its mesh collider. That terrain is missing until a replacement is
+assigned or the original model and its `.meta` file are restored. The terrain
+preparation script also requires an external source OBJ as its input.
+
+Commit `76e4344e` retains the original models in Git LFS for recovery. Checking out
+that older commit requires Git LFS; the current branch contents do not.
 
 Unity caches, temporary files, editor user settings, generated IDE projects, and
 crash dumps are excluded by `.gitignore`.

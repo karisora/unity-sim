@@ -1,4 +1,0 @@
-# Download the large terrain source data with Git LFS before opening Unity.
-/Assets/Map/Model3D_mesh2.obj filter=lfs diff=lfs merge=lfs -text
-/SourceAssets/Map/Model3D_mesh2_untextured.obj filter=lfs diff=lfs merge=lfs -text
-/Assets/Map/orthophoto.tif filter=lfs diff=lfs merge=lfs -text
